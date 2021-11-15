@@ -21,3 +21,20 @@ $(".theTarget").skippr({
   // 1枚目のスライド表示時に戻る矢印を表示するかどうか [false]:矢印を隠さない [true]:矢印を隠す
   hidePrevious : false
 });
+
+$(function(){
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    },300);
+    event.preventDefault();
+  });
+});
+
+$(function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});
